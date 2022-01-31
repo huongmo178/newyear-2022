@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/slyle.css">
+</head>
+<body>
+    <div id="main">
+        <div id="content">
+            <div id="text">
+                <ul>
+                    <li class="header">Cậu sẽ làm gì sau đây:</li>
+                </ul>
+                <ul class="answer">
+                    <button class="btn btn1">Lì xì cho Mơ</button>
+                    <button class="btn btn2">Được Mơ lì xì</button>
+                </ul>
+            </div>
+        </div>
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+                <div class="modal-header">
+                    <p>MƠ CẢM ƠN</p>
+                </div>
+                <ul class="modal-content">
+                    <li>MB Bank</li>
+                    <li>VU THI HUONG MO</li>
+                    <li>STK: 000000170823</li>
+                    <li>Chi tiết liên hệ: <a href="https://www.facebook.com/vivian.vu.39904/">Hương Mơ</a></li>
+                    <button class="close js-modal-close">Close</button>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        const btn2 = document.querySelector('.btn2')
+        const buyBtns = document.querySelectorAll('.btn1') 
+        const modal = document.querySelector('.js-modal')
+        const modalClose = document.querySelector('.js-modal-close')
+        const modalContainer = document.querySelector('.js-modal-container')
+    
+        function showBuyTickets() {
+        modal.classList.add('open')   
+        }
+        function hideBuyTickets() {
+        modal.classList.remove('open')   
+        }
+        function offbtn() {
+            btn2.classList.add('troll')
+        }
+        btn2.addEventListener('click', offbtn)
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
+        modalClose.addEventListener('click', hideBuyTickets)
+    </script>
+</body>
+</html>
